@@ -1,0 +1,136 @@
+.custom-progress {
+  appearance: none;
+  //   width: 200px;
+  height: 12px;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &::-webkit-progress-bar {
+    background-color: #f3f3f3;
+    border-radius: 2px;
+  }
+
+  &::-webkit-progress-value {
+    background-color: rgb(var(--primary-color));
+    border-radius: 2px;
+  }
+
+  &:hover {
+    &::-webkit-progress-value {
+      background-color: rgb(var(--primary-color), 0.8);
+    }
+  }
+
+  &.bitget-progress {
+    &::-webkit-progress-value {
+      background-color: rgb(var(--secondary-color));
+    }
+
+    &:hover {
+      &::-webkit-progress-value {
+        background-color: rgb(var(--secondary-color, 0.8));
+      }
+    }
+  }
+}
+
+.binance-spot-bot,
+.bitget-spot-bot {
+  border: 1px solid rgb(var(--primary-color));
+  color: rgb(var(--primary-color));
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(var(--primary-color));
+    color: rgb(var(--fx-white));
+  }
+
+  &.active {
+    background-color: rgb(var(--primary-color));
+    color: rgb(var(--fx-white));
+  }
+}
+
+.status-percent {
+  background-color: rgb(var(--primary-color));
+  color: rgb(var(--fx-white));
+  padding: 5px;
+}
+
+//table styles
+
+.table-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(var(--secondary-color));
+}
+
+.custome-dataTable {
+  height: clamp(100px, 100vh - 297px, 900px);
+}
+
+.custom-balanceTable{
+  height: clamp(100px, 100vh - 324px, 900px);
+}
+
+.custom-coinTable {
+  height: clamp(100px, 100vh - 270px, 900px);
+}
+
+.custom-font-size {
+  font-size: clamp(13px, 2vw, 18px);
+}
+
+.custom-balances-font-size{
+  font-size: clamp(10px, 2vw, 14px);
+}
+
+.custom-width-symbole{
+  font-size: clamp(12px, 2vw, 14px);;
+}
+
+.crypto-icon{
+  width: clamp(32px, 10vw, 20px);
+}
+
+.w-ft-content {
+  width: fit-content;
+}
+
+.table>:not(caption)>*>* {
+  padding: .5rem .2rem;
+}
+
+table thead th {
+  position: sticky;
+  top: 0;
+  background-color: rgb(var(--primary-color)) !important;
+  z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #adacac;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgb(var(--primary-color)), rgb(var(--secondary-color)));
+  /* Gradient color */
+  border-radius: 10px;
+  border: 2px solid transparent;
+  /* Transparent border for effect */
+  background-clip: padding-box;
+  /* Keeps gradient inside the border */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

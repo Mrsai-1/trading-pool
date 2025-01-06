@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // border: 1px solid black;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(var(--theme-secondary));
+  color: rgb(var(--text-color));
+  overflow: hidden auto;
+}
+
+// custom classes
+button {
+  border: none;
+  background-color: rgb(var(--primary-color));
+  color: rgb(var(--fx-white));
+  font-size: 14px;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgb(var(--secondary-color));
+    color: rgb(var(--fx-dark));
+  }
+
+  &.notactive {
+    background-color: transparent;
+    border: 1px solid rgb(var(--primary-color));
+    color: rgb(var(--fx-dark));
+  }
+  .theme-btn {
+  }
+}
+.primary-color {
+  color: rgb(var(--primary-color));
+}
+
+.primary-bg {
+  background-color: rgb(var(--primary-color));
+  color: rgb(var(--fx-white)) !important;
+
+  th {
+    p {
+      color: rgb(var(--fx-white)) !important;
+    }
+  }
+}
+
+.secondary-bg {
+  background-color: rgb(var(--secondary-color));
+  color: rgb(var(--fx-dark));
+}
+
+
+
+.secondary-color {
+  color: rgb(var(--secondary-color));
+}
+
+.secondary-bg-color {
+  background-color: rgb(var(--secondary-color));
+}
+
+.success-color {
+  background-color: #008c4b;
+}
+.fx-white {
+  color: rgb(var(--fx-white));
+}
+.fx-dark {
+  color: rgb(var(--fx-dark));
+}
+
+.muted-text {
+  color: rgb(var(muted-text));
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.lh-2 {
+  line-height: 2.4rem;
+}
+
+// font-sizes
+
+.fs-10 {
+  font-size: 10px;
+}
+.fs-11 {
+  font-size: 11px;
+}
+.fs-12 {
+  font-size: 12px;
+}
+.fs-13 {
+  font-size: 13px;
+}
+.fs-14 {
+  font-size: 14px;
+}
+.fs-15 {
+  font-size: 15px;
+}
+.fs-16 {
+  font-size: 16px;
+}
+.fs-17 {
+  font-size: 17px;
+}
+.fs-18 {
+  font-size: 18px;
+}
+.fs-19 {
+  font-size: 19px;
+}
+.fs-20 {
+  font-size: 20px;
+}
+
+// speedometer styles
+.speedometer {
+  height: 160px !important;
+}
+
+// bootstrap classes
+.row > * {
+  padding-right: calc(var(--bs-gutter-x) * 0.4) !important;
+  padding-left: calc(var(--bs-gutter-x) * 0.4) !important;
+}
+
+.row-gap-2 {
+  row-gap: 8px;
+}
+
+.row-gap-3 {
+  row-gap: 2rem;
+}
+.column-gap-2 {
+  column-gap: 2rem;
+}
+.card {
+  background-color: rgb(var(--theme-primary));
+  width: 100%;
+  height: 100%;
+}
+
+// bootstrap form styles
+.form-label {
+  margin-left: 5px;
+  font-size: 13px !important;
+  color: #212529;
+}
+
+.form-control {
+  font-size: 13px;
+  background-color: #e8f1f5;
+  border: none;
+}
+.form-select {
+  font-size: 13px;
+  color: #6e6f71;
+  background-color: #e8f1f5;
+  border: none;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: transparent;
+  border-color: #29576d;
+  outline: 0;
+  box-shadow: 0 0 0 2px rgb(94 148 173);
+  border-radius: 3px;
+}
+
+.form-select:focus {
+  border-color: #29576d;
+  outline: 0;
+  box-shadow: 0 0 0 2px rgb(94 148 173);
+}
+
+// bootstrap modal styles
+// .modal-content {
+//   // background-color: #fff;
+//   overflow: hidden;
+// }
+
+// .modal-content::before {
+//   position: absolute;
+//   content: "";
+//   height: 250px;
+//   width: 250px;
+//   top: 0;
+//   left: 0;
+//   transform: translate(50%, 50%);
+//   background-image: url(../images/logo-light.png);
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   opacity: 0.05;
+//   z-index: 0;
+// }
+
+.bg-success {
+  background-color: #008c4b !important;
+}
+
+.text-success {
+  color: #008c4b !important;
+}
+
+.bg-danger {
+  background-color: #db0000 !important;
+}
+
+.text-danger {
+  color: #db0000 !important;
+}
+
+.rotate-360 {
+  animation: rotateAnimation 1s linear infinite;
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

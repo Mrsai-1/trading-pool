@@ -1,0 +1,240 @@
+.background {
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+
+    .shape {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        border-radius: 50%;
+
+        &.blue {
+            background: var(--bg-gradient-blue);
+            left: -80px;
+            top: -80px;
+        }
+
+        &.orange {
+            background: var(--bg-gradient-orange);
+            right: -30px;
+            bottom: -80px;
+        }
+    }
+}
+
+// ===============================
+// Login Form
+// ===============================
+.LoginForm,
+.otp-container {
+    height: 520px;
+    width: 400px;
+    background-color:rgb( var(--primary-color));
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--box-shadow);
+    padding: 50px 35px;
+
+    h3 {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 42px;
+        text-align: center;
+        color: rgb(var(--fx-white));
+    }
+
+    h4 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color:rgb( var(--fx-white));
+    }
+
+    .loginLabel {
+        display: block;
+        // margin-top: 30px;
+        font-size: 16px;
+        font-weight: 500;
+        color: rgb(var(--fx-white));
+    }
+
+    .loginInput {
+        display: block;
+        height: 50px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.07);
+        color: rgb(var(--fx-white));
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 300;
+        position: relative;
+
+        &::placeholder {
+            color: #e5e5e5;
+        }
+    }
+
+    .LoginButton {
+        // margin-top: 50px;
+        width: 100%;
+        background-color: rgb(var(--fx-white));
+        color: rgb(var(--primary-color));
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            // background-color: #f1f1f1;
+        }
+
+    }
+
+    .block {
+        position: relative;
+
+        span {
+            position: absolute;
+            /* top: 50%; */
+            right: 10px;
+            /* margin-top: 9px; */
+            transform: translateY(-142%);
+            cursor: pointer;
+            color: #fff;
+
+            i {
+                font-size: 18px;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: #ccc; // Change color on hover for better UI feedback
+                }
+            }
+        }
+    }
+
+
+}
+
+// ===============================
+// Social Section
+// ===============================
+.social {
+    margin-top: 30px;
+    display: flex;
+
+    div {
+        width: 150px;
+        border-radius: 3px;
+        padding: 5px 10px 10px 5px;
+        background-color: rgba(255, 255, 255, 0.27);
+        color: #eaf0fb;
+        text-align: center;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.47);
+        }
+
+        &.fb {
+            margin-left: 25px;
+        }
+
+        i {
+            margin-right: 4px;
+        }
+    }
+}
+
+// ===============================
+// otp Styles
+// ======    =
+:where(.otp-container, .otp-form, .input-field, .header-otp) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+// ===============================
+// Container Styles
+// ===============================
+.otp-container {
+    header {
+        height: 65px;
+        width: 65px;
+        background: #4070f4;
+        color: #fff;
+        font-size: 2.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+// ===============================
+// Form and Input Field Styles
+// ===============================
+.otp-form {
+    .input-field {
+        flex-direction: row;
+        column-gap: 10px;
+
+        input {
+            height: 45px;
+            width: 42px;
+            border-radius: 6px;
+            outline: none;
+            font-size: 1.125rem;
+            text-align: center;
+            border: 1px solid #ddd;
+
+            &:focus {
+                box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+            }
+
+            // Hide spin buttons for number inputs
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                display: none;
+            }
+        }
+    }
+
+    .LoginButton {
+        margin-top: 25px;
+        width: 100%;
+        color: #fff;
+        font-size: 1rem;
+        border: none;
+        padding: 9px 0;
+        cursor: pointer;
+        border-radius: 6px;
+        background: #6e93f7;
+        transition: all 0.2s ease;
+
+        // Active button state
+        &.active {
+            background: #4070f4;
+            pointer-events: auto;
+        }
+
+        // Hover effect
+        &:hover {
+            background: #0e4bf1;
+        }
+    }
+}

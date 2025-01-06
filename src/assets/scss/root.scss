@@ -1,0 +1,26 @@
+:root {
+  --primary-color: 28, 82, 109; // #1C526D
+  --secondary-color: 124, 219, 249; // #7CDBF9
+
+  --theme-primary: 255, 255, 255; // #FFFFFF
+  --theme-secondary: 247, 248, 250; // #F8F9FB
+  --text-color: 21, 21, 23; //#151517
+  --fx-white: 255, 255, 255;
+  --fx-dark: 0, 0, 0;
+  --muted-text: 226, 226, 226; //e2e2e2
+}
+
+
+body {
+  &.dark {
+    //--theme-primary: 40, 44, 49; // #282C31
+    //--theme-secondary: 29, 29, 31; // #1D1D1F
+    //--text-color: 240, 240, 240; // #F0F0F0
+
+    // other color theme
+    --primary-color: 68, 61, 186; //  #443DBA
+    --secondary-color: 151, 146, 232; // #9792E8
+  }
+}
+
+

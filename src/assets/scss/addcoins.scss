@@ -1,0 +1,10 @@
+.addcoin-btn {
+  background-color: transparent !important;
+  color: rgb(var(--primary-color));
+  border: 2px solid rgb(var(--primary-color));
+
+  &.active {
+    background-color: rgb(var(--primary-color)) !important;
+    color: rgb(var(--fx-white));
+  }
+}

@@ -1,0 +1,10 @@
+.footer {
+  z-index: 9;
+
+  .footer-link {
+    &.active {
+      background-color: rgb(var(--primary-color));
+      color: rgb(var(--fx-white)) !important;
+    }
+  }
+}

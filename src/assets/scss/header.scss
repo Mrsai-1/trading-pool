@@ -1,0 +1,18 @@
+.theme-toggle {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(var(--text-color));
+  cursor: pointer;
+}
+
+.profile-wrapper {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+
+  img {
+    width: 100%;
+    object-fit: fill;
+  }
+}
