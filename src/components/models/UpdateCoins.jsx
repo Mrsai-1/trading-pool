@@ -203,7 +203,7 @@ class UpdateCoins extends Form {
                       onChange={this.handleChange}
                       className="form-select"
                     >
-                      <option value="AMM">AMM</option>
+                      <option value="AMM">SPOT</option>
                       <option value="FUTURES">FUTURES</option>
                     </select>
                     {errors.bot && (

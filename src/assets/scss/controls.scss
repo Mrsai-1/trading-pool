@@ -75,11 +75,36 @@
     z-index: 1050;
   }
 
+  .cron-settings-card {
+    height: clamp(100px, 100dvh - 151px, 900px);
+    overflow: auto;
+  }
+
   @media screen and (max-width: 768px) {
     @supports (-webkit-backdrop-filter: none) {
       .modal-backdrop {
         background-color: rgba(0, 0, 0, 0.5);
         /* Adjust opacity */
       }
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 990px) {
+    .cron-settings-card {
+      height: clamp(100px, 100dvh - 154px, 900px);
+      overflow: auto;
+    }
+
+  }
+
+  @media screen and (min-width: 990px) {
+    .controlls-table {
+      height: clamp(100px, 100dvh - 180px, 900px);
+      overflow: auto;
+    }
+
+    .cron-settings-card {
+      height: clamp(100px, 100dvh - 99px, 900px);
+      overflow: auto;
     }
   }

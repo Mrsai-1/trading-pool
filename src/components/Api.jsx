@@ -7,7 +7,9 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { profileRedux } from "./reduxStore/slice/profileSlice";
 import apidoc1 from "../assets/images/api-doc/api-page1.png";
 import apidoc2 from "../assets/images/api-doc/api-page2.png";
-const ConfirmPopup = React.lazy(() => import("./models/ConfirmPopup"));
+// const ConfirmPopup = React.lazy(() => import("./models/ConfirmPopup"));
+
+import ConfirmPopup from "./models/ConfirmPopup";
 
 const Api = ({ getProfile }) => {
   const [data, setData] = useState({});
@@ -143,9 +145,9 @@ const Api = ({ getProfile }) => {
           passphrase: "",
         });
 
-        navigate("/dashboard")
+      navigate("/dashboard")
 
-        
+
       const modalInstance = window.bootstrap.Modal.getInstance(
         modelRef.current
       );
@@ -166,7 +168,7 @@ const Api = ({ getProfile }) => {
   // Updated renderForm function
   const renderForm = (apiType) => (
     <form className="my-5" onSubmit={(e) => handleSubmit(e, apiType)}>
-  
+
       <div className="mb-4">
         <label className="form-label text-uppercase fs-15 fw-bold">
           api key
@@ -225,27 +227,27 @@ const Api = ({ getProfile }) => {
         </button>
       </div>
 
-      <Suspense fallback={<div>Loading...</div>}>
-        {/* <ConfirmPopup toggleBotStatus={handleConfirm}
+      {/* <Suspense fallback={<div>Loading...</div>}> */}
+      {/* <ConfirmPopup toggleBotStatus={handleConfirm}
           botStatus="Confirm" msg={`Change Api Keys in this account ${getProfile?.profile?.user_name}`}
           modelRef={modelRef} /> */}
-        <ConfirmPopup
-          label="Change Api Keys"
-          msg={`Change Api Keys in this account ${getProfile?.profile?.user_name}`}
-          botStatus="Confirm"
-          toggleBotStatus={handleConfirm}
-          modelRef={modelRef}
-          btnDisable={btnDisable}
-          id="confirmDelete"
-        />
-      </Suspense>
+      <ConfirmPopup
+        label="Change Api Keys"
+        msg={`Change Api Keys in this account ${getProfile?.profile?.user_name}`}
+        botStatus="Confirm"
+        toggleBotStatus={handleConfirm}
+        modelRef={modelRef}
+        btnDisable={btnDisable}
+        id="confirmDelete"
+      />
+      {/* </Suspense> */}
     </form>
   );
 
   return (
     <div className="api">
       <div className="card">
-        <div className="card-body">
+        <div className="card-body api-card">
           <div className="container">
             <div className="my-4">
               <Link to="/dashboard">
@@ -273,14 +275,13 @@ const Api = ({ getProfile }) => {
                 : renderForm("BITGET")}
             </>
           </div>
-        </div>
-      </div>
 
-      {
-        activeApi === "BINANCE" ? (
 
-          <div className="card my-3">
-            <div className="card-body py-5">
+          {
+            activeApi === "BINANCE" ? (
+
+              // <div className="card my-3">
+              //   <div className="card-body py-5">
               <div className="container">
                 {/* documentation */}
                 <h5 className="primary-color text-uppercase fw-bold mb-4">
@@ -308,7 +309,7 @@ const Api = ({ getProfile }) => {
                   account.
                 </p>
                 <div className="text-center">
-                  <img src={apidoc1} alt="api-document" className="w-100"/>
+                  <img src={apidoc1} alt="api-document" className="w-100" />
                 </div>
                 <h6 className="primary-color fw-semibold">Step 2</h6>
                 <p className="fs-14">
@@ -333,7 +334,7 @@ const Api = ({ getProfile }) => {
                   your funds remain safe while trading
                 </p>
                 <div className="text-center">
-                  <img src={apidoc2} alt="api-document" className="w-100"/>
+                  <img src={apidoc2} alt="api-document" className="w-100" />
                 </div>
                 <p className="fs-14">
                   To enable trading, click on "Edit" and check the box next to
@@ -349,17 +350,19 @@ const Api = ({ getProfile }) => {
                   visible.
                 </p>
               </div>
-            </div>
-          </div>
+              //   </div>
+              // </div>
 
-        ) : (
+            ) : (
               <div className="card my-3">
                 <p className="text-center fw-bold p-3">No documentation available for BITGET API</p>
-                </div>
-        )
+              </div>
+            )
 
-      }
+          }
 
+        </div>
+      </div>
     </div>
   );
 };

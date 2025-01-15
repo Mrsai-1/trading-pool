@@ -1,4 +1,5 @@
 .api {
+
   .binance-api,
   .bitget-api {
     border: 1px solid rgb(var(--primary-color));
@@ -20,7 +21,7 @@
 
 
 
-/* From Uiverse.io by satyamchaudharydev */ 
+/* From Uiverse.io by satyamchaudharydev */
 /* From uiverse.io by @satyamchaudharydev */
 /* removing default style of button */
 
@@ -30,13 +31,14 @@
   color: #8b8ba7;
   padding: 0;
 }
+
 /* styling of whole input container */
 .formData {
   --timing: 0.3s;
   --width-of-input: 200px;
   --height-of-input: 40px;
   --border-height: 2px;
-  --input-bg:rgb(var(--primary-color));
+  --input-bg: rgb(var(--primary-color));
   // --border-color: #2f2ee9;
   --border-radius: 30px;
   --after-border-radius: 1px;
@@ -48,8 +50,9 @@
   padding-inline: 0.8em;
   border-radius: var(--border-radius);
   transition: border-radius 0.5s ease;
-  background: var(--input-bg,#d81212);
+  background: var(--input-bg, #d81212);
 }
+
 /* styling of Input */
 .input {
   font-size: 0.9rem;
@@ -62,6 +65,7 @@
   font-weight: 700;
   color: rgb(var(--fx-white));
 }
+
 /* styling of animated border */
 .formData:before {
   content: "";
@@ -76,6 +80,7 @@
   border-radius: 1px;
   transition: transform var(--timing) ease;
 }
+
 /* Hover on Input */
 .formData:focus-within {
   border-radius: var(--after-border-radius);
@@ -85,16 +90,17 @@
   outline: none;
 }
 
-.input::placeholder{
-  color :rgb(var(--fx-white));
-  opacity : .5;
-  font-weight:normal;
+.input::placeholder {
+  color: rgb(var(--fx-white));
+  opacity: .5;
+  font-weight: normal;
 }
 
 /* here is code of animated border */
 .formData:focus-within:before {
   transform: scale(1);
 }
+
 /* styling of close button */
 /* == you can click the close button to remove text == */
 .reset {
@@ -103,13 +109,30 @@
   opacity: 0;
   visibility: hidden;
 }
+
 /* close button shown when typing */
-input:not(:placeholder-shown) ~ .reset {
+input:not(:placeholder-shown)~.reset {
   opacity: 1;
   visibility: visible;
 }
+
 /* sizing svg icons */
 .formData svg {
   width: 17px;
   // margin-top: 3px;
+}
+
+
+.api-card {
+  height: clamp(100px, 100dvh - 152px, 900px);
+  overflow: auto;
+}
+
+@media screen and (min-width: 992px) {
+
+  .api-card {
+    height: clamp(100px, 100dvh - 95px, 900px);
+    overflow: auto;
+  }
+
 }

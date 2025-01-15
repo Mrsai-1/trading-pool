@@ -18,7 +18,7 @@ const Footer = () => {
     {
       id: 1,
       path: "/allDataTable",
-      itemName: "AMM Bot",
+      itemName: "SPOT Bot",
       icon: <AiFillApi size={17} />,
       onClick: () => {
         // Store data in localStorage for API

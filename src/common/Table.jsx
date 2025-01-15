@@ -13,18 +13,18 @@ const Table = ({ data, thead }) => {
 
   return (
     <>
-      <div className="table-responsive">
-        <table className="table table-bordered text-center mb-0">
-          <thead className="thead primary-bg">
+      <div className="table-responsive bots-table-area mb-2">
+        <table className="table table-bordered text-center mb-0  align-middle custom-border">
+          <thead className="thead">
             <tr>
               {thead.map((head, i) => (
                 <th key={i}>
-                  <p className="mb-0 primary-color fs-14">{head}</p>
+                  <p className="mb-0 fs-14">{head}</p>
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="tbody">
+          <tbody className="tbody fx-white">
             {limitedData?.length > 0 ? (
               limitedData?.map((data, index) => (
                 <tr key={index}>
@@ -76,7 +76,7 @@ const Table = ({ data, thead }) => {
             </td>
           </tr> */}
 
-            <tr>
+            {/* <tr>
               <td colSpan={3} className="text-center">
                 <div
                   onClick={() => {
@@ -97,11 +97,35 @@ const Table = ({ data, thead }) => {
                   <button className="py-1">View All</button>
                 </div>
               </td>
-            </tr>
+            </tr> */}
 
 
           </tbody>
         </table>
+
+
+      </div>
+
+      <div className="d-flex justify-content-between align-items-center">
+        <div
+          onClick={() => {
+            // Store data in localStorage
+            const dataToStore = {
+              reduxName: "binanceFuture",
+              type: "FUTURES",
+              platform: "BINANCE",
+              extraReduxName: "bitgetFuture",
+              extraPlatform: "BITGET",
+            };
+            localStorage.setItem("allDataTableParams", JSON.stringify(dataToStore));
+
+            // Navigate to the route without query params
+            navigate("/allDataTable");
+          }}
+        >
+          <button className="py-1">View All</button>
+        </div>
+
         <div className="text-end">
           <button
             className="py-1"
@@ -111,7 +135,6 @@ const Table = ({ data, thead }) => {
             Buy / Sell
           </button>
         </div>
-
       </div>
       <Buysellfuturemodal />
     </>

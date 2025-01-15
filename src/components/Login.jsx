@@ -150,6 +150,7 @@ class Login extends Form {
                         required=""
                         onChange={this.handleChange}
                         autoComplete="off"  // Workaround for password and other fields
+                        autoFocus
                       />
                       <label htmlFor="userEmail" className="inputLabel">
                         Email
@@ -197,6 +198,7 @@ class Login extends Form {
                             otp: e.target.value.replace(/[^\d\.]/g, ""),
                           })
                         }
+                        autoFocus
                       />
                       <label htmlFor="userOtp" className="inputLabel">
                         OTP

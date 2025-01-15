@@ -44,12 +44,12 @@
 
   &:hover {
     background-color: rgb(var(--primary-color));
-    color: rgb(var(--fx-white));
+    color: rgb(var(--fx-dark));
   }
 
   &.active {
     background-color: rgb(var(--primary-color));
-    color: rgb(var(--fx-white));
+    color: rgb(var(--fx-dark));
   }
 }
 
@@ -69,40 +69,57 @@
 }
 
 .custome-dataTable {
-  height: clamp(100px, 100vh - 297px, 900px);
+  height: clamp(100px, 100dvh - 349px, 900px);
 }
 
-.custom-balanceTable{
-  height: clamp(100px, 100vh - 324px, 900px);
+.controlls-table {
+  height: clamp(100px, 100dvh - 253px, 900px);
+  overflow: auto;
+}
+
+.bots-table-area {
+  // height: clamp(100px, 100vh - 468px, 900px);
+  height: clamp(100px, 100dvh - 485px, 900px);
+}
+
+.custom-balanceTable {
+  height: clamp(100px, 100dvh - 324px, 900px);
 }
 
 .custom-coinTable {
-  height: clamp(100px, 100vh - 270px, 900px);
+  // height: clamp(100px, 100vh - 270px, 900px);
+  // height: clamp(100px, 100vh - 278px, 900px);
+  height: clamp(100px, 100dvh - 358px, 900px);
 }
 
 .custom-font-size {
   font-size: clamp(13px, 2vw, 18px);
 }
 
-.custom-balances-font-size{
+.custom-balances-font-size {
   font-size: clamp(10px, 2vw, 14px);
 }
 
-.custom-width-symbole{
-  font-size: clamp(12px, 2vw, 14px);;
+.custom-width-symbole {
+  font-size: clamp(12px, 2vw, 14px);
+  ;
 }
 
-.crypto-icon{
+.crypto-icon {
   width: clamp(32px, 10vw, 20px);
+  height:  clamp(32px, 10vw, 20px); /* Set the desired height */
+  background: rgb(var(--fx-white));
+  object-fit: cover; /* Ensures the image fits within the dimensions */
+  border-radius: 50%; /* Optional: Makes the images circular */
 }
 
 .w-ft-content {
   width: fit-content;
 }
 
-.table>:not(caption)>*>* {
-  padding: .5rem .2rem;
-}
+// .table>:not(caption)>*>* {
+//   padding: .5rem .2rem;
+// }
 
 table thead th {
   position: sticky;
@@ -134,3 +151,82 @@ table thead th {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+// .bots-table {
+//   overflow: auto;
+//   height: clamp(100px, 100dvh - 133px, 900px);
+// }
+
+
+
+@media screen and (min-width: 300px) and (max-width: 768px) {
+
+  .custom-dataTable {
+    height: clamp(100px, 100dvh - 297px, 900px);
+  }
+
+  .controlls-table {
+    // height: clamp(100px, 100dvh - 183px, 900px);
+    height: clamp(100px, 100dvh - 253px, 900px);
+    overflow: auto;
+  }
+
+  .custom-coinTable {
+    height: clamp(100px, 100dvh - 358px, 900px);
+  }
+
+  .bots-table-row {
+    overflow: auto;
+    height: clamp(100px, 100dvh - 133px, 900px);
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .custom-coinTable {
+    height: clamp(100px, 100dvh - 358px, 900px);
+  }
+
+  .alldata-card-table {
+    height: clamp(100px, 100dvh - 150px, 900px);
+  }
+
+  .custom-balanceTable {
+    height: clamp(100px, 100dvh - 335px, 900px);
+  }
+
+  .custome-dataTable {
+    height: clamp(100px, 100dvh - 306px, 900px);
+  }
+
+  .bots-table {
+    overflow: auto;
+    height: clamp(100px, 100dvh - 133px, 900px);
+  }
+
+
+}
+
+@media screen and (min-width: 1024px) {
+  .custom-coinTable {
+    height: clamp(100px, 100dvh - 257px, 900px);
+  }
+
+  .alldata-card-table {
+    height: clamp(100px, 100dvh - 99px, 900px);
+  }
+
+  .custom-balanceTable {
+    height: clamp(100px, 100dvh - 284px, 900px);
+  }
+
+  .custome-dataTable {
+    height: clamp(100px, 100dvh - 255px, 900px);
+  }
+
+}
+
+.current-value{
+  fill: rgb(var(--fx-white))!important;
+}
+

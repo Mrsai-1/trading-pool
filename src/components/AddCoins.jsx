@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react";
-import { MdDelete } from "react-icons/md";
+import { MdAdd, MdDelete } from "react-icons/md";
 import { RiEdit2Fill } from "react-icons/ri";
 import coinService from "../services/CoinServices";
 import ConfirmPopup from "./models/ConfirmPopup";
@@ -13,7 +13,9 @@ import MiniLoader from "../common/MiniLoader";
 import { connect, useDispatch } from "react-redux";
 import { coinListRdx } from "./reduxStore/slice/coinsListSlice";
 
-const UpdateCoins = lazy(() => import("./models/UpdateCoins"));
+// const UpdateCoins = lazy(() => import("./models/UpdateCoins"));
+
+import UpdateCoins from "./models/UpdateCoins";
 
 class AddCoins extends Form {
   constructor(props) {
@@ -199,20 +201,22 @@ class AddCoins extends Form {
                   <td>{item.platform}</td>
                   <td>{item.bot}</td>
                   <td>
-                    <span
-                      className="primary-color me-3 cursor-pointer"
-                      onClick={() => this.handleShowModal(item)}
-                    >
-                      <RiEdit2Fill size={18} />
-                    </span>
-                    <span
-                      className="text-danger cursor-pointer"
-                      onClick={() => this.setState({ coinDelate: item })}
-                      data-bs-toggle="modal"
-                      data-bs-target="#confirmDelete"
-                    >
-                      <MdDelete size={18} />
-                    </span>
+                    <div className="d-flex">
+                      <span
+                        className="primary-color me-3 cursor-pointer"
+                        onClick={() => this.handleShowModal(item)}
+                      >
+                        <RiEdit2Fill size={18} />
+                      </span>
+                      <span
+                        className="text-danger cursor-pointer"
+                        onClick={() => this.setState({ coinDelate: item })}
+                        data-bs-toggle="modal"
+                        data-bs-target="#confirmDelete"
+                      >
+                        <MdDelete size={18} />
+                      </span>
+                    </div>
                   </td>
                 </tr>
               ))
@@ -236,7 +240,7 @@ class AddCoins extends Form {
     const { activeTab } = this.state
 
 
- 
+
 
 
     const theadData = [
@@ -257,22 +261,26 @@ class AddCoins extends Form {
           <div className="container-lg">
             <div className="d-flex justify-content-between align-items-center">
               <Link to="/dashboard">
-                <button className="text-uppercase py-1 px-3">back</button>
+                <button className="text-uppercase py-1 px-3 custom-font-size">back</button>
               </Link>
 
-              <h5 className="text-center my-3 fw-bold primary-color text-capitalize">
+              <h5 className="text-center my-3 fw-bold primary-color text-capitalize custom-font-size">
                 Add Coins Table
               </h5>
 
               {/* Add Coin Button */}
               <div className="text-end my-3">
                 <button
-                  className="py-2 rounded text-capitalize primary-bg fs-13"
+                  className="py-2 rounded text-capitalize primary-bg fs-13 px-2"
                   type="button"
                   data-bs-toggle="modal"
                   data-bs-target="#addCoinModal"
                 >
-                  Add Coin
+                  {/* Show "Add Coin" on large devices */}
+                  <span className="d-none d-lg-inline">Add Coin</span>
+
+                  {/* Show "+" on mobile devices */}
+                  <span className="d-lg-none "><MdAdd size={16} /></span>
                 </button>
               </div>
             </div>
@@ -288,7 +296,7 @@ class AddCoins extends Form {
                 ].map(({ label, tabKey, coinData }) => (
                   <button
                     key={tabKey}
-                    className={`addcoin-btn ${activeTab === tabKey ? "active" : ""}`}
+                    className={`addcoin-btn ${activeTab === tabKey ? "active" : ""} py-1 px-3`}
                     onClick={() => this.setState({ activeTab: tabKey })}
                   >
                     {label}
@@ -304,7 +312,7 @@ class AddCoins extends Form {
                     onChange={this.handleFilterChange}
                     className="form-select"
                   >
-                    <option value="AMM">AMM</option>
+                    <option value="AMM">SPOT</option>
                     <option value="FUTURES">FUTURES</option>
                   </select>
                 </div>
@@ -325,24 +333,24 @@ class AddCoins extends Form {
         </div>
 
         {/* Modals */}
-        <Suspense fallback={<MiniLoader />}>
-          <ConfirmPopup
-            label="Confirm Delete"
-            msg={`Delete Coin`}
-            botStatus="Delete"
-            toggleBotStatus={this.handleDeleteCoins}
-            modelRef={this.closeRef}
-            btnDisable={this.state.btnDisable}
-            id="confirmDelete"
-          />
+        {/* <Suspense fallback={<MiniLoader />}> */}
+        <ConfirmPopup
+          label="Confirm Delete"
+          msg={`Delete Coin`}
+          botStatus="Delete"
+          toggleBotStatus={this.handleDeleteCoins}
+          modelRef={this.closeRef}
+          btnDisable={this.state.btnDisable}
+          id="confirmDelete"
+        />
 
-          {/* {this.state.modalShow && ( */}
-          <UpdateCoins
-            coinList={this.state.modalData}
-            fetchCoins={this.fetchCoins}
-          />
-          {/* )} */}
-        </Suspense>
+        {/* {this.state.modalShow && ( */}
+        <UpdateCoins
+          coinList={this.state.modalData}
+          fetchCoins={this.fetchCoins}
+        />
+        {/* )} */}
+        {/* </Suspense> */}
 
         {/* Add Coin Modal */}
         <div
@@ -425,7 +433,7 @@ class AddCoins extends Form {
                         onChange={this.handleChange}
                         className="form-select"
                       >
-                        <option value="AMM">AMM</option>
+                        <option value="AMM">SPOT</option>
                         <option value="FUTURES">FUTURES</option>
                       </select>
                       {this.state.errors.bot && (

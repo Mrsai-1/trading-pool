@@ -1,13 +1,36 @@
 :root {
-  --primary-color: 28, 82, 109; // #1C526D
-  --secondary-color: 124, 219, 249; // #7CDBF9
+  // --primary-color: 28, 82, 109; // #1C526D
+  // --secondary-color: 124, 219, 249; // #7CDBF9
 
-  --theme-primary: 255, 255, 255; // #FFFFFF
-  --theme-secondary: 247, 248, 250; // #F8F9FB
-  --text-color: 21, 21, 23; //#151517
-  --fx-white: 255, 255, 255;
-  --fx-dark: 0, 0, 0;
-  --muted-text: 226, 226, 226; //e2e2e2
+  // --theme-primary: 255, 255, 255; // #FFFFFF
+  // --theme-secondary: 247, 248, 250; // #F8F9FB
+  // --text-color: 21, 21, 23; //#151517
+  // --fx-white: 255, 255, 255;
+  // --fx-dark: 0, 0, 0;
+  // --muted-text: 226, 226, 226; //e2e2e2
+
+
+  --primary-color:48, 207, 255; /* Accent Gold */
+
+  --secondary-color: 30, 144, 255; /* Sky Blue */
+  --theme-primary:  0, 41, 72;
+  --theme-secondary: 0, 31, 63; /* Navy Blue Background */
+  --card-background-color: 10, 41, 72; /* Darker Navy for Cards */
+  --text-color:21,21,23;
+  --fx-white: 255, 255, 255; /* White Text */
+  --muted-text: 176, 196, 222; /* Light Steel Blue for Muted Text */
+  --success-color: 40, 167, 69; /* Green for Success */
+  --error-color: 220, 53, 69; /* Red for Errors */
+  --warning-color: 255, 193, 7; /* Yellow for Warnings */
+  --info-color: 23, 162, 184; /* Cyan for Information */
+  --fx-dark:0, 0, 0;
+
+  // Shadows
+--box-shadow-light: 0 2px 4px rgba(255, 255, 255, 0.1);
+--box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.3);
+--box-shadow-primary: 0 2px 4px rgba(48, 207, 255, 0.4);;
+
+
 }
 
 

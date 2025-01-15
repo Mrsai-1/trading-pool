@@ -12,8 +12,11 @@ import useFetchKeys from "../../common/CotextTest";
 import MiniLoader from "../../common/MiniLoader";
 
 // Lazy load components
-const ConfirmPopup = React.lazy(() => import("../models/ConfirmPopup"));
-const EditInvestment = React.lazy(() => import("../models/EditInvestmentModel"));
+// const ConfirmPopup = React.lazy(() => import("../models/ConfirmPopup"));
+// const EditInvestment = React.lazy(() => import("../models/EditInvestmentModel"));
+
+import ConfirmPopup from "../models/ConfirmPopup";
+import EditInvestment from "../models/EditInvestmentModel";
 
 const BinanceSpotBot = ({ dispatch, bitgetSpot, getProfile }) => {
   const [formData] = useState({
@@ -188,16 +191,17 @@ const BinanceSpotBot = ({ dispatch, bitgetSpot, getProfile }) => {
   }
 
   return (
-    <Suspense fallback={<MiniLoader />}>
+    <>
+    {/* <Suspense fallback={<MiniLoader />}> */}
       {loading ? (
         <div className="loader">
           <MiniLoader />
         </div>
       ) : (
         <>
-          <div className="bot-status d-flex flex-wrap justify-content-between gap-2 pb-1">
+          <div className="bot-status d-flex flex-wrap justify-content-between gap-2 mb-2">
             <div
-              className="border d-flex flex-column align-items-center justify-content-between flex-fill p-1 cursor-pointer"
+              className="custom-border d-flex flex-column align-items-center justify-content-between flex-fill p-1 cursor-pointer"
               data-bs-toggle="modal"
               data-bs-target="#editInvest"
             >
@@ -208,7 +212,7 @@ const BinanceSpotBot = ({ dispatch, bitgetSpot, getProfile }) => {
                 Capital Assigned
               </p>
             </div>
-            <div className="border d-flex flex-column align-items-center justify-content-between flex-fill p-1">
+            <div className="custom-border d-flex flex-column align-items-center justify-content-between flex-fill p-1">
               <h6 className="mb-0 fw-bold fs-15">
                 {formatToExactDecimals(parseFloat(totalBalance || "0"), 2)}
               </h6>
@@ -216,7 +220,7 @@ const BinanceSpotBot = ({ dispatch, bitgetSpot, getProfile }) => {
                 Current Balance
               </p>
             </div>
-            <div className="border d-flex flex-column align-items-center justify-content-between flex-fill p-1">
+            <div className="custom-border d-flex flex-column align-items-center justify-content-between flex-fill p-1">
               <h6
                 className={`mb-0 status-percent fw-bold px-2 py-1 fs-13 ${capital_investment < 0 ? "bg-danger" : "bg-success"
                   }`}
@@ -233,7 +237,7 @@ const BinanceSpotBot = ({ dispatch, bitgetSpot, getProfile }) => {
                 % Change
               </p>
             </div>
-            <div className="border d-flex justify-content-center align-items-center flex-fill p-1">
+            <div className="custom-border d-flex justify-content-center align-items-center flex-fill p-1">
               {handleButtonClick()}
             </div>
           </div>
@@ -331,7 +335,8 @@ const BinanceSpotBot = ({ dispatch, bitgetSpot, getProfile }) => {
           </div>
         </>
       )}
-    </Suspense>
+    {/* </Suspense> */}
+    </>
   );
 };
 

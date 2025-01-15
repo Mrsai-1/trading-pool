@@ -34,7 +34,7 @@ const AllDataTable = () => {
   const [closeTradeDisable, setCloseTradeDisable] = useState(false);
   const [closeTradeBtn, setCloseTradeBtn] = useState({
     pair: "",
-    order_id: "", // Set the pair as the clicked row's symbol
+    order_id: null, // Set the pair as the clicked row's symbol
     symbol: "",
     type: "",
   });
@@ -61,9 +61,6 @@ const AllDataTable = () => {
 
   const Redux = useSelector((state) => state?.[reduxName]?.value);
 
-  const testing = useSelector((state) => state?.selectedTableData);
-
-console.log(testing,"testing")
 
   const { bots, api_keys } = profile || {};
 
@@ -255,9 +252,10 @@ console.log(testing,"testing")
       } else {
         formattedData = {
           platform: platform,
-          order_id: closeTradeBtn.order_id,
+          order_id: String(closeTradeBtn.order_id),
           symbol: closeTradeBtn.symbol,
         };
+        console.log(formattedData)
         response = await backEndCallObj(
           "/trades/cancel_pending_order",
           formattedData
@@ -284,7 +282,7 @@ console.log(testing,"testing")
 
   return (
     <div className="card">
-      <div className="card-body">
+      <div className="card-body alldata-card-table">
         <div className="mb-4">
           <div className="d-flex align-items-center justify-content-between flex-wrap gap-1 my-1 flex-row-reverse">
 
@@ -307,7 +305,7 @@ console.log(testing,"testing")
                       className="crypto-platform-icon me-2"
                     />
                   )}
-                  {platform} {type === "FUTURES" ? "FUTURES" : "AMM"} DATA&nbsp;<span className={` custom-font-size ${botStatus === "Disable" ? "text-danger" : "text-success"}`}>({botStatus})</span>
+                  {platform} {type === "FUTURES" ? "FUTURES" : "SPOT"} DATA&nbsp;<span className={` custom-font-size ${botStatus === "Disable" ? "text-danger" : "text-success"}`}>({botStatus})</span>
                 </div>
 
 
@@ -418,18 +416,13 @@ console.log(testing,"testing")
 
       <ConfirmPopup
         label="Bot Status"
-        msg={`${botStatus} bot`}
-        botStatus={botStatus}
+        msg={`${botStatus === "Enable" ? "Disable" : "Enable"} bot`}
+        botStatus={botStatus === "Enable" ? "Disable" : "Enable"}
         toggleBotStatus={toggleBotStatus}
         modelRef={modelRef}
         btnDisable={btnDisable}
         id="botChangeModal"
       />
-
-
-
-
-
 
 
       <EditInvestmentModel
@@ -527,13 +520,14 @@ console.log(testing,"testing")
                 }}
               >
                 <div className="mb-4">
+              {console.log(toggleRedux , data , data?.platform , platform)}
                   <input
                     type="text"
                     className="form-control"
                     id="platform"
                     name="platform"
                     placeholder="Platform"
-                    value={data?.platform}
+                    value={platform} // Use the correct field based on the toggleRedux value
                     readOnly
                   />
                 </div>

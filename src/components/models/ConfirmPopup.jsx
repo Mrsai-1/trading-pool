@@ -2,12 +2,13 @@ import React, { Component } from "react";
 
 class ConfirmPopup extends Component {
 
+
+
   
   render() {
     const { label, msg, botStatus, toggleBotStatus, modelRef, btnDisable ,id } =
       this.props;
 
-      
 
 
     return (

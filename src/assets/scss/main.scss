@@ -13,8 +13,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(var(--theme-secondary));
-  color: rgb(var(--text-color));
-  overflow: hidden auto;
+  color: rgb(var(--fx-white));
+  overflow: hidden;
 }
 
 // custom classes
@@ -29,7 +29,7 @@ button {
 
   &:hover {
     background-color: rgb(var(--secondary-color));
-    color: rgb(var(--fx-dark));
+    color: rgb(var(--fx-white));
   }
 
   &.notactive {
@@ -46,7 +46,7 @@ button {
 
 .primary-bg {
   background-color: rgb(var(--primary-color));
-  color: rgb(var(--fx-white)) !important;
+  color: rgb(var(--fx-dark)) !important;
 
   th {
     p {
@@ -60,7 +60,9 @@ button {
   color: rgb(var(--fx-dark));
 }
 
-
+.custom-border{
+  border: 1px solid rgb(var(--primary-color));
+}
 
 .secondary-color {
   color: rgb(var(--secondary-color));
@@ -153,6 +155,7 @@ button {
   background-color: rgb(var(--theme-primary));
   width: 100%;
   height: 100%;
+  box-shadow: var(--box-shadow-primary);
 }
 
 // bootstrap form styles
@@ -212,19 +215,19 @@ button {
 // }
 
 .bg-success {
-  background-color: #008c4b !important;
+  background-color: #36bb6c !important;
 }
 
 .text-success {
-  color: #008c4b !important;
+  color: #36bb6c !important;
 }
 
 .bg-danger {
-  background-color: #db0000 !important;
+  background-color: #ff7a91 !important;
 }
 
 .text-danger {
-  color: #db0000 !important;
+  color: #ff7a91 !important;
 }
 
 .rotate-360 {

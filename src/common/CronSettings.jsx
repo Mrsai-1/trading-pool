@@ -119,7 +119,7 @@ const CronSettings = () => {
   return (
     <>
       <div className="card">
-        <div className="card-body px-4">
+        <div className="card-body px-4 cron-settings-card">
           <div className="container">
             <div className="d-flex justify-content-between gap-5 align-items-center">
               <div className="my-3">
@@ -130,7 +130,7 @@ const CronSettings = () => {
               <a className="cursor-pointer" onClick={() => {
                 handleCloseOrders()
               }}>
-                Close the Pending AMM Orders
+                Close the Pending SPOT Orders
               </a>
 
             </div>
@@ -156,7 +156,7 @@ const CronSettings = () => {
                       ])}
                       {renderSelect("Bot", "bot", [
                         { id: "default", value: "", label: "-- Select --" },
-                        { id: "amm", value: "AMM", label: "Amm" },
+                        { id: "amm", value: "AMM", label: "SPOT" },
                         { id: "futures", value: "FUTURES", label: "Futures" },
                       ])}
                       {renderButton("Submit", "mt-4 px-3 py-2 rounded")}

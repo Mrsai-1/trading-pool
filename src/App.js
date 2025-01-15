@@ -10,14 +10,24 @@ import MakeAnAdmin from "./common/MakeAnAdmin";
 import ErrorBoundary from "./basic/errorBoundary"; // Import the Error Boundary
 
 // Lazy-loaded components
-const Dashboard = lazy(() => import("./components/Dashboard"));
-const NotFound = lazy(() => import("./components/NotFound"));
-const Layout = lazy(() => import("./components/Layout"));
-const Login = lazy(() => import("./components/Login"));
-const Controls = lazy(() => import("./components/Controls"));
-const Api = lazy(() => import("./components/Api"));
-const AllDataTable = lazy(() => import("./common/AllDataTable"));
-const AddCoins = lazy(() => import("./components/AddCoins"));
+// const Dashboard = lazy(() => import("./components/Dashboard"));
+// const NotFound = lazy(() => import("./components/NotFound"));
+// const Layout = lazy(() => import("./components/Layout"));
+// const Login = lazy(() => import("./components/Login"));
+// const Controls = lazy(() => import("./components/Controls"));
+// const Api = lazy(() => import("./components/Api"));
+// const AllDataTable = lazy(() => import("./common/AllDataTable"));
+// const AddCoins = lazy(() => import("./components/AddCoins"));
+
+import Login from "./components/Login";
+import Layout from "./components/Layout";
+import Dashboard from "./components/Dashboard";
+import NotFound from "./components/NotFound";
+import Controls from "./components/Controls";
+import Api from "./components/Api";
+import AllDataTable from "./common/AllDataTable";
+import AddCoins from "./components/AddCoins";
+
 
 function App() {
   const router = createBrowserRouter([
@@ -56,9 +66,9 @@ function App() {
     <>
       <ToastContainer position="top-right" autoClose={3000} />
       <ErrorBoundary>
-        <Suspense fallback={<Loader />}>
+        {/* <Suspense fallback={<Loader />}> */}
           <RouterProvider router={router} />
-        </Suspense>
+        {/* </Suspense> */}
       </ErrorBoundary>
     </>
   );

@@ -96,7 +96,7 @@ class DisableAllCoins extends Form {
             <div className="text-start mb-4">
               {this.renderSelect("Bot", "bot", [
                 { id: "selectoption", value: "", label: "-- Select --" },
-                { id: "amm", value: "AMM", label: "AMM" },
+                { id: "amm", value: "AMM", label: "SPOT" },
                 { id: "futures", value: "FUTURES", label: "Futures" },
               ])}
             </div>

@@ -4,15 +4,21 @@ import SpeedOMeter from "../common/SpeedOMeter";
 import MiniLoader from "../common/MiniLoader";
 import { useLocation } from "react-router-dom";
 
-const BinanceSpotBot = React.lazy(() => import("./bots-table/BinanceSpotBot"));
-const BinanceFutureBot = React.lazy(() => import("./bots-table/BinanceFutureBot"));
-const BitgitSpotBot = React.lazy(() => import("./bots-table/BitgitSpotBot"));
-const BitgitFutureBot = React.lazy(() => import("./bots-table/BitgitFuture"));
+// const BinanceSpotBot = React.lazy(() => import("./bots-table/BinanceSpotBot"));
+// const BinanceFutureBot = React.lazy(() => import("./bots-table/BinanceFutureBot"));
+// const BitgitSpotBot = React.lazy(() => import("./bots-table/BitgitSpotBot"));
+// const BitgitFutureBot = React.lazy(() => import("./bots-table/BitgitFuture"));
+
+
+import BinanceSpotBot from "./bots-table/BinanceSpotBot";
+import BinanceFutureBot from "./bots-table/BinanceFutureBot";
+import BitgitSpotBot from "./bots-table/BitgitSpotBot";
+import BitgitFutureBot from "./bots-table/BitgitFuture";
 
 const Dashboard = () => {
   const location = useLocation();
 
-  const { type = "AMM", platform="FUTURES" } = location.state || {};
+  const { type, platform } = location.state || {};
 
 
   const [activeFutureBot, setActiveFutureBot] = useState(
@@ -32,8 +38,8 @@ const Dashboard = () => {
 
   return (
     <>
-      <div>
-        <div className="row row-gap-2 pb-2 d-none d-sm-flex">
+      <div className="bots-table">
+        <div className="row row-gap-2 pb-2 d-none d-md-flex">
           <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
             <div className="card">
               <div className="card-body text-center p-1">
@@ -88,12 +94,12 @@ const Dashboard = () => {
         </div>
 
 
-        <div className="row row-gap-2">
+        <div className="row row-gap-2 bots-table-row">
           {/* SPOT BOT SECTION */}
-          <div className="col-xl-6 col-lg-6 col-md-12">
-            <div className="card">
-              <div className="card-body pb-1">
-                <div className="the-bots d-flex gap-2 pb-1">
+          <div className="col-xl-6 col-lg-6 col-md-12 mb-3">
+            <div className="card ">
+              <div className="card-body ">
+                <div className="the-bots d-flex gap-2 mb-2">
                   <div
                     className={`binance-spot-bot flex-fill text-center p-2 ${activeSpotBot === "BINANCE" ? "active" : ""
                       }`}
@@ -113,27 +119,27 @@ const Dashboard = () => {
                     </p>
                   </div>
                 </div>
-                <Suspense
+                {/* <Suspense
                   fallback={
                     <div>
                       <MiniLoader />
                     </div>
                   }
-                >
+                > */}
                   {activeSpotBot === "BINANCE" ? <BinanceSpotBot /> : <BitgitSpotBot />}
                   {/* {activeSpotBot === "BITGET" && <BitgitSpotBot />} */}
 
 
-                </Suspense>
+                {/* </Suspense> */}
               </div>
             </div>
           </div>
 
           {/* FUTURES BOT SECTION */}
           <div className="col-xl-6 col-lg-6 col-md-12 mb-3">
-            <div className="card mb-5">
-              <div className="card-body pb-1">
-                <div className="the-bots d-flex gap-2 pb-1">
+            <div className="card">
+              <div className="card-body ">
+                <div className="the-bots d-flex gap-2 mb-2">
                   <div
                     className={`binance-spot-bot flex-fill text-center p-2 ${activeFutureBot === "BINANCE" ? "active" : ""
                       }`}
@@ -153,18 +159,18 @@ const Dashboard = () => {
                     </p>
                   </div>
                 </div>
-                <Suspense
+                {/* <Suspense
                   fallback={
                     <div>
                       <MiniLoader />
                     </div>
                   }
-                >
+                > */}
                   {activeFutureBot === "BINANCE" ? <BinanceFutureBot /> : <BitgitFutureBot />}
                   {/* {activeFutureBot === "BITGET" && <BitgitFutureBot/>} */}
 
 
-                </Suspense>
+                {/* </Suspense> */}
               </div>
             </div>
           </div>

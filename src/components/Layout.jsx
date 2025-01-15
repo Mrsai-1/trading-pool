@@ -15,7 +15,7 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <main className="container-fluid">
+      <main className="container-fluid mb-5 pb-3 mb-sm-0 pb-sm-0">
         <Outlet />
       </main>
       <Footer />

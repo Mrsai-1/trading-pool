@@ -44,31 +44,31 @@ const SpeedOMeter = ({ title, balance, target }) => {
             text: "5K",
             position: "OUTSIDE",
             fontSize: "13px",
-            color: "#1C526D",
+            color: "#fff",
           },
           {
             text: "10K",
             position: "OUTSIDE",
             fontSize: "13px",
-            color: "#1C526D",
+            color: "#fff",
           },
           {
             text: "15K",
             position: "OUTSIDE",
             fontSize: "13px",
-            color: "#1C526D",
+            color: "#fff",
           },
           {
             text: "20K",
             position: "OUTSIDE",
             fontSize: "13px",
-            color: "#1C526D",
+            color: "#fff",
           },
           {
             text: "25K",
             position: "OUTSIDE",
             fontSize: "13px",
-            color: "#1C526D",
+            color: "#fff",
           },
         ]}
         needleColor="#000"

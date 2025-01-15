@@ -49,7 +49,7 @@ const Header = () => {
             <div className="d-flex gap-5 flex-wrap">
               <div className="d-flex gap-3 align-items-center">
                 <Link to="/dashboard">
-                  <img src={mainLogo} alt="7pools-logo" width={110} />
+                  <img src={mainLogo} alt="7pools-logo" width={110} className="header-logo"/>
                 </Link>
                 {/* <h5
                   className="mb-0 text-uppercase fw- d-flex align-items-center"
@@ -83,7 +83,7 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="dropdown border-0">
+              <div className="dropdown border-0  px-2 py-1">
                 <div
                   className="dropdown-toggle d-flex align-items-center justify-content-end"
                   type="button"
@@ -102,8 +102,8 @@ const Header = () => {
                   </div>
 
                   {/* <span className="fs-13 text-muted fw-bold">Pavan Rebba</span> */}
-                  <div className="me-2 d-none d-sm-block">
-                    <p className="mb-0 fs-14 fw-semibold">
+                  <div className="me-2 d-none d-sm-block profile-dropdown">
+                    <p className="mb-0 fs-14 fw-semibold text-capitalize">
                       {" "}
                       {profile?.user_name}
                     </p>

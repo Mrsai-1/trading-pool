@@ -16,3 +16,9 @@
     object-fit: fill;
   }
 }
+
+
+.header-logo{
+  filter: invert(1) brightness(1.4) contrast(1.3) saturate(1.5) hue-rotate(175deg);
+    mix-blend-mode: screen;
+}
