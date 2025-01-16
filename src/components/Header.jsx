@@ -9,7 +9,7 @@ import { AiFillControl, AiFillApi } from "react-icons/ai";
 import { FaBitcoin } from "react-icons/fa";
 import useFetchKeys from "../common/CotextTest";
 
-const Header = () => {
+const Header = ({isDark}) => {
 
 
   const dispatch = useDispatch();
@@ -49,7 +49,7 @@ const Header = () => {
             <div className="d-flex gap-5 flex-wrap">
               <div className="d-flex gap-3 align-items-center">
                 <Link to="/dashboard">
-                  <img src={mainLogo} alt="7pools-logo" width={110} className="header-logo"/>
+                  <img src={mainLogo} alt="7pools-logo" width={110} className={`${!isDark && "header-logo"}`}/>
                 </Link>
                 {/* <h5
                   className="mb-0 text-uppercase fw- d-flex align-items-center"
@@ -83,7 +83,7 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="dropdown border-0  px-2 py-1">
+              <div className="dropdown border-0  px-2 py-1 primary-color spacing-6">
                 <div
                   className="dropdown-toggle d-flex align-items-center justify-content-end"
                   type="button"
@@ -191,7 +191,7 @@ const Header = () => {
                       <span className="fs-14 fw-semibold">Logout</span>
                     </div>
                   </li>
-                  <li>
+                  {/* <li>
                     <div className="d-flex gap-1 align-items-center justify-content-center py-2">
                       <span className="fs-13 text-muted">Theme</span>
                       <div
@@ -199,7 +199,7 @@ const Header = () => {
                         onClick={handleTheme}
                       ></div>
                     </div>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

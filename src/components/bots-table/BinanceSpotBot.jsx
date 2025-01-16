@@ -174,7 +174,7 @@ const BinanceSpotBot = ({ dispatch, binanceSpot, getProfile }) => {
     if (api_keys?.[formData?.platform]?.api_key) {
       return (
         <button
-          className="theme-btn success-color text-uppercase"
+          className="theme-btn success-color text-uppercase text-white"
           type="button"
           data-bs-toggle="modal"
           data-bs-target="#binanceBot"
@@ -185,7 +185,7 @@ const BinanceSpotBot = ({ dispatch, binanceSpot, getProfile }) => {
     }
     return (
       <button
-        className="theme-btn success-color text-uppercase"
+        className="theme-btn success-color text-uppercase text-white"
         type="button"
         onClick={() => navigate("/api", { state: { platform: formData.platform } })}
       >
@@ -227,7 +227,7 @@ const BinanceSpotBot = ({ dispatch, binanceSpot, getProfile }) => {
               <h6 className="mb-0 fw-bold fs-15">
                 {parseFloat(total_investment || 0)}
               </h6>
-              <p className="mb-0 text-capitalize primary-color fs-12 fw-semibold">
+              <p className="mb-0 text-capitalize  fs-12 fw-semibold">
                 capital assigned
               </p>
             </div>
@@ -235,13 +235,13 @@ const BinanceSpotBot = ({ dispatch, binanceSpot, getProfile }) => {
               <h6 className="mb-0 fw-bold fs-15">
                 {formatToExactDecimals(parseFloat(totalBalance || 0), 2)}
               </h6>
-              <p className="mb-0 text-capitalize primary-color fs-12 fw-semibold">
+              <p className="mb-0 text-capitalize  fs-12 fw-semibold">
                 current balance
               </p>
             </div>
             <div className="custom-border d-flex flex-column align-items-center justify-content-between flex-fill p-1">
               <h6
-                className={`mb-0 status-percent fw-bold px-2 py-1 fs-13 ${capital_investment < 0 ? "bg-danger" : "bg-success"
+                className={`mb-0 status-percent fw-bold px-2 py-1 fs-13 rounded-pill ${capital_investment < 0 ? "bg-danger" : "bg-success"
                   }`}
               >
                 {capital_investment > 0
@@ -250,7 +250,7 @@ const BinanceSpotBot = ({ dispatch, binanceSpot, getProfile }) => {
                 %
               </h6>
               <p
-                className={`mb-0 text-capitalize primary-color fs-12 fw-semibold ${capital_investment < 0 ? "text-danger" : "text-success"
+                className={`mb-0 text-capitalize  fs-12 fw-semibold ${capital_investment < 0 ? "text-danger" : "text-success"
                   }`}
               >
                 % change
@@ -284,7 +284,7 @@ const BinanceSpotBot = ({ dispatch, binanceSpot, getProfile }) => {
             <div className="modal-dialog text-dark modal-dialog-centered">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h5 className="modal-title primary-color text-capitalize">
+                  <h5 className="modal-title text-capitalize">
                     Add Bot Configuration
                   </h5>
                   <button

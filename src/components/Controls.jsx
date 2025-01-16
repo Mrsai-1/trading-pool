@@ -87,8 +87,8 @@ const Controls = () => {
               admin controls
             </h5>
 
-            <Link to="/cronsetting">
-              <p className="fs-14 mb-0 fw-semibold text-capitalize primary-color text-underline-none">
+            <Link to="/cronsetting" className="text-decoration-none">
+              <p className="fs-14 mb-0 fw-semibold text-capitalize primary-color">
                 cron settings
               </p>
             </Link>
@@ -113,12 +113,12 @@ const Controls = () => {
                   </th>
                   <th className="p-2 p-sm-3">
                     <p className="mb-0 primary-color fs-14 text-capitalize">
-                      enable disable
+                       disable enable
                     </p>
                   </th>
                 </tr>
               </thead>
-              <tbody className="fs-13">
+              <tbody className="fs-13 text-white">
                 {Loading ? (
                   // Loading state: Show spinner or placeholder
                   <tr>

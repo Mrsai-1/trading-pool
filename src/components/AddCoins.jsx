@@ -168,7 +168,7 @@ class AddCoins extends Form {
 
     return (
       <div className="table-responsive custom-coinTable">
-        <table className="table table-bordered table-striped">
+        <table className="table table-bordered table-striped text-white">
           <thead className="thead primary-bg">
             <tr>
               {thData.map((data, index) => (
@@ -261,10 +261,10 @@ class AddCoins extends Form {
           <div className="container-lg">
             <div className="d-flex justify-content-between align-items-center">
               <Link to="/dashboard">
-                <button className="text-uppercase py-1 px-3 custom-font-size">back</button>
+                <button className="text-uppercase py-1 px-3">back</button>
               </Link>
 
-              <h5 className="text-center my-3 fw-bold primary-color text-capitalize custom-font-size">
+              <h5 className="text-center my-3 fw-bold primary-color text-capitalize">
                 Add Coins Table
               </h5>
 

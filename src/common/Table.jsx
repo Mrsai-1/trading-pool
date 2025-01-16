@@ -14,7 +14,7 @@ const Table = ({ data, thead }) => {
   return (
     <>
       <div className="table-responsive bots-table-area mb-2">
-        <table className="table table-bordered text-center mb-0  align-middle custom-border">
+        <table className="table text-center mb-0  align-middle">
           <thead className="thead">
             <tr>
               {thead.map((head, i) => (
@@ -24,7 +24,7 @@ const Table = ({ data, thead }) => {
               ))}
             </tr>
           </thead>
-          <tbody className="tbody fx-white">
+          <tbody className="tbody default-text">
             {limitedData?.length > 0 ? (
               limitedData?.map((data, index) => (
                 <tr key={index}>

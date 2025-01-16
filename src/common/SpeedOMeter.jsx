@@ -19,6 +19,8 @@ const SpeedOMeter = ({ title, balance, target }) => {
   const icon = getIcon(title);
 
 
+
+
   return (
     <>
       <div className="d-flex align-items-center justify-content-center gap-2 mb-2">
@@ -31,7 +33,7 @@ const SpeedOMeter = ({ title, balance, target }) => {
             className="crypto-title-icon"
           />
         )}
-        <p className="text-capitalize primary-color fw-bold fs-14 mb-0">{title}</p>
+        <p className="text-capitalize fw-bold fs-14 mb-0">{title}</p>
       </div>
       <ReactSpeedometer
         forceRender={true}
@@ -44,31 +46,31 @@ const SpeedOMeter = ({ title, balance, target }) => {
             text: "5K",
             position: "OUTSIDE",
             fontSize: "13px",
-            color: "#fff",
+            color: "#6c757d",
           },
           {
             text: "10K",
             position: "OUTSIDE",
             fontSize: "13px",
-            color: "#fff",
+            color: "#6c757d",
           },
           {
             text: "15K",
             position: "OUTSIDE",
             fontSize: "13px",
-            color: "#fff",
+            color: "#6c757d",
           },
           {
             text: "20K",
             position: "OUTSIDE",
             fontSize: "13px",
-            color: "#fff",
+            color: "#6c757d",
           },
           {
             text: "25K",
             position: "OUTSIDE",
             fontSize: "13px",
-            color: "#fff",
+            color: "#6c757d",
           },
         ]}
         needleColor="#000"

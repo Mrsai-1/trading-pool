@@ -55,7 +55,7 @@
 
 .status-percent {
   background-color: rgb(var(--primary-color));
-  color: rgb(var(--fx-white));
+  // color: rgb(var(--fx-white));
   padding: 5px;
 }
 
@@ -121,10 +121,20 @@
 //   padding: .5rem .2rem;
 // }
 
+.table{
+  border-color: rgb(var(--default-border-color));
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+  --bs-table-accent-bg: var(--bs-table-striped-bg);
+  color: rgb(var(--fx-white));
+}
+
 table thead th {
   position: sticky;
   top: 0;
-  background-color: rgb(var(--primary-color)) !important;
+  background-color: rgb(var(--muted-text)) !important;
+  color: rgb(var(--fx-white));
   z-index: 1;
 }
 
@@ -230,3 +240,105 @@ table thead th {
   fill: rgb(var(--fx-white))!important;
 }
 
+
+/* From Uiverse.io by cbolson */ 
+.switch {
+  --_switch-padding: 3px; /* padding around button*/
+  --_label-padding: .5rem 1rem; /* padding around the labels -  this gives the switch it's global width and height */
+  --_switch-easing: cubic-bezier(
+    0.47,
+    1.64,
+    0.41,
+    0.8
+  ); /* easing on toggle switch */
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  position: relative;
+  isolation: isolate;
+  margin-bottom: .5rem;
+}
+
+.switch input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.switch > span {
+  display: grid;
+  place-content: center;
+  transition: opacity 300ms ease-in-out 150ms;
+  margin: var(--_label-padding);
+}
+.switch::before,
+.switch::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  transition: inset 150ms ease-in-out;
+}
+/* switch slider */
+.switch::before {
+  background-color: rgb(var(--primary-color));
+  inset: var(--_switch-padding) 50% var(--_switch-padding)
+    var(--_switch-padding);
+  transition:
+    inset 500ms var(--_switch-easing),
+    background-color 500ms ease-in-out;
+  z-index: -1;
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.3),
+    0 1px rgba(255, 255, 255, 0.3);
+    color: rgb(var(--fx-dark));
+}
+/* switch bg color */
+.switch::after {
+  background-color: rgb(var(--muted-text));
+  inset: 0;
+  z-index: -2;
+}
+/* switch hover & focus */
+// .switch:focus-within::after {
+//   inset: -0.25rem;
+// }
+.switch:has(input:checked):hover > span:first-of-type,
+.switch:has(input:not(:checked)):hover > span:last-of-type {
+  opacity: 1;
+  transition-delay: 0ms;
+  transition-duration: 100ms;
+}
+/* switch hover */
+.switch:has(input:checked):hover::before {
+  inset: var(--_switch-padding) var(--_switch-padding) var(--_switch-padding)
+    50%;
+}
+.switch:has(input:not(:checked)):hover::before {
+  inset: var(--_switch-padding) 45% var(--_switch-padding)
+    var(--_switch-padding);
+}
+/* checked - move slider to right */
+.switch:has(input:checked)::before {
+  // background-color: rgb(var(--theme-primary));
+  inset: var(--_switch-padding) var(--_switch-padding) var(--_switch-padding)
+    50%;
+}
+/* checked - set opacity */
+.switch > span:last-of-type,
+.switch > input:checked + span:first-of-type {
+  opacity: 0.75;
+}
+.switch > input:checked ~ span:last-of-type {
+  opacity: 1;
+}

@@ -78,7 +78,7 @@ class DisableAllCoins extends Form {
     const { btnDisable } = this.state;
     return (
      <>
-      <div className="card shadow-sm border-0">
+      <div className="card custom-border">
         <div className="card-header text-center primary-bg">
           <p className="mb-0 fw-bold fs-15 text-capitalize">
             Disable all coins

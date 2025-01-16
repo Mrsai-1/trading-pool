@@ -95,7 +95,7 @@ const CronSettings = () => {
     setBtnDisable(true);
     try {
       const response = await backEndCallNoEnc(
-        "/admin/sell_all_coins"
+        "/Admin/sell_all_spot"
       );
       toast.success(response?.success);
       const modalInstance = window?.bootstrap?.Modal?.getInstance(modelRef?.current);
@@ -127,7 +127,7 @@ const CronSettings = () => {
                   <button className="text-uppercase py-1 px-3">back</button>
                 </Link>
               </div>
-              <a className="cursor-pointer" onClick={() => {
+              <a className="cursor-pointer text-decoration-none primary-color" onClick={() => {
                 handleCloseOrders()
               }}>
                 Close the Pending SPOT Orders
@@ -141,7 +141,7 @@ const CronSettings = () => {
 
             <div className="row my-4 justify-content-evenly row-gap-3">
               <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-                <div className="card shadow-sm border-0">
+                <div className="card custom-border">
                   <div className="card-header text-center primary-bg">
                     <p className="mb-0 fw-bold fs-15 text-capitalize">
                       Sell All Coins

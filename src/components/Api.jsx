@@ -244,6 +244,11 @@ const Api = ({ getProfile }) => {
     </form>
   );
 
+  const handleChangeApi = (event) => {
+    const isChecked = event.target.checked;
+    setActiveApi(isChecked ? "BITGET" : "BINANCE");
+  };
+
   return (
     <div className="api">
       <div className="card">
@@ -257,7 +262,7 @@ const Api = ({ getProfile }) => {
             <h5 className="text-center text-uppercase fw-bold mb-5 mt-3 primary-color">
               api settings
             </h5>
-            <div className="d-flex gap-2 flex-wrap">
+            {/* <div className="d-flex gap-2 flex-wrap">
               {["BINANCE", "BITGET"].map((api) => (
                 <div
                   key={api}
@@ -268,7 +273,20 @@ const Api = ({ getProfile }) => {
                   <p className="text-capitalize mb-0 fw-semibold">{api} API</p>
                 </div>
               ))}
-            </div>
+            </div> */}
+
+            
+<div className="d-flex justify-content-end align-items-center">
+               <label htmlFor="botFilter" className="switch" aria-label="Toggle Filter">
+        <input
+          type="checkbox"
+          id="botFilter"
+          onChange={handleChangeApi}
+        />
+        <span className={`${activeApi === "BINANCE" ? "text-dark fw-semibold" : ""}`}>Binance APi</span>
+        <span className={`${activeApi === "BITGET" ? "text-dark fw-semibold" : ""}`}>Bitget Api</span>
+      </label>
+               </div>
             <>
               {activeApi === "BINANCE"
                 ? renderForm("BINANCE")

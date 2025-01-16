@@ -13,15 +13,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(var(--theme-secondary));
-  color: rgb(var(--fx-white));
+  color: rgb(var(--default-text-color));
   overflow: hidden;
+  letter-spacing: 1px;
 }
 
 // custom classes
 button {
   border: none;
   background-color: rgb(var(--primary-color));
-  color: rgb(var(--fx-white));
+  // color: rgb(var(--fx-white));
   font-size: 14px;
   padding: 10px 20px;
   font-weight: 600;
@@ -60,8 +61,12 @@ button {
   color: rgb(var(--fx-dark));
 }
 
+.default-text{
+  color: rgb(var(--default-text-color));
+}
+
 .custom-border{
-  border: 1px solid rgb(var(--primary-color));
+  border: 1px solid rgb(var(--default-border-color));
 }
 
 .secondary-color {
@@ -83,7 +88,7 @@ button {
 }
 
 .muted-text {
-  color: rgb(var(muted-text));
+  color: rgb(var(--muted-text));
 }
 
 .cursor-pointer {
@@ -130,6 +135,10 @@ button {
   font-size: 20px;
 }
 
+.spacing-6{
+  letter-spacing: .6px;
+}
+
 // speedometer styles
 .speedometer {
   height: 160px !important;
@@ -155,7 +164,12 @@ button {
   background-color: rgb(var(--theme-primary));
   width: 100%;
   height: 100%;
-  box-shadow: var(--box-shadow-primary);
+  box-shadow: var(--box-shadow-medium);
+}
+
+.card a:hover{
+  color:rgb(var(--fx-white))
+
 }
 
 // bootstrap form styles
@@ -215,19 +229,20 @@ button {
 // }
 
 .bg-success {
-  background-color: #36bb6c !important;
+  background-color: #4CAF50 !important;
+  
 }
 
 .text-success {
-  color: #36bb6c !important;
+  color: #4CAF50 !important;
 }
 
 .bg-danger {
-  background-color: #ff7a91 !important;
+  background-color: #FF6F61 !important;
 }
 
 .text-danger {
-  color: #ff7a91 !important;
+  color: #FF6F61 !important;
 }
 
 .rotate-360 {
