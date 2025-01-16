@@ -12,22 +12,22 @@ const BinanceSpotTable = ({ data }) => {
 
   return (
     <>
-    <div className="table-responsive bots-table-area mb-2">
-      <table className="table table-bordered text-center mb-0 align-middle custom-border">
-        <thead className="thead">
+    <div className="table-responsive bots-table-area">
+      <table className="table table-bordered text-center mb-0">
+        <thead className="thead primary-bg">
           <tr>
             <th>
-              <p className="mb-0 fs-14">Symbol</p>
+              <p className="mb-0 primary-color fs-14">Symbol</p>
             </th>
             <th>
-              <p className="mb-0 fs-14">Price</p>
+              <p className="mb-0 primary-color fs-14">Price</p>
             </th>
             <th>
-              <p className="mb-0 fs-14">OrigQty</p>
+              <p className="mb-0 primary-color fs-14">OrigQty</p>
             </th>
           </tr>
         </thead>
-        <tbody className="tbody fx-white">
+        <tbody className="tbody">
           {limitedData?.length > 0 ? (
             limitedData?.map((data, index) => (
               <tr key={index}>
@@ -38,6 +38,7 @@ const BinanceSpotTable = ({ data }) => {
                       src={getCoinicons(data?.symbol)}
                       alt={data?.name}
                       className="cryptocurreny-icon-table crypto-icon"
+                      width={25}
                     />
                     <p className="mb-0 fs-13 fw-semibold">
                       {data?.symbol || "NA"}
@@ -70,7 +71,7 @@ const BinanceSpotTable = ({ data }) => {
               <div
                 onClick={() => {
                   navigate("/allDataTable", {
-                    state: { reduxName: "binanceSpot", type: "  " , platform: "BINANCE" },
+                    state: { reduxName: "binanceSpot", type: "AMM" , platform: "BINANCE" },
                   });
                 }}
               >
@@ -122,7 +123,7 @@ const BinanceSpotTable = ({ data }) => {
        // Navigate to the route without query parameters
        navigate("/allDataTable");
      }}
-     className="text-center"
+     className="text-center mt-3"
    >
      <button className="py-1">View All</button>
    </div>

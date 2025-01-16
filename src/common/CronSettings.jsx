@@ -92,12 +92,15 @@ const CronSettings = () => {
 
 
   const closeOrdersHandlers = async () => {
+   if(btnDisable) return;
     setBtnDisable(true);
     try {
       const response = await backEndCallNoEnc(
-        "/admin/sell_all_coins"
+        "/admin/sell_all_spot"
       );
-      toast.success(response?.success);
+      if(response){
+        toast.success("Successfully Closed All Orders");
+      }
       const modalInstance = window?.bootstrap?.Modal?.getInstance(modelRef?.current);
       if (modalInstance) modalInstance?.hide();
       // fetchData(formData, setLoading, selectedSlice);

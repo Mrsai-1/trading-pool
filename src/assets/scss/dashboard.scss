@@ -44,12 +44,12 @@
 
   &:hover {
     background-color: rgb(var(--primary-color));
-    color: rgb(var(--fx-dark));
+    color: rgb(var(--fx-white));
   }
 
   &.active {
     background-color: rgb(var(--primary-color));
-    color: rgb(var(--fx-dark));
+    color: rgb(var(--fx-white));
   }
 }
 
@@ -79,7 +79,7 @@
 
 .bots-table-area {
   // height: clamp(100px, 100vh - 468px, 900px);
-  height: clamp(100px, 100dvh - 485px, 900px);
+  height: clamp(100px, 100dvh - 479px, 900px);
 }
 
 .custom-balanceTable {
@@ -107,19 +107,15 @@
 
 .crypto-icon {
   width: clamp(32px, 10vw, 20px);
-  height:  clamp(32px, 10vw, 20px); /* Set the desired height */
-  background: rgb(var(--fx-white));
-  object-fit: cover; /* Ensures the image fits within the dimensions */
-  border-radius: 50%; /* Optional: Makes the images circular */
 }
 
 .w-ft-content {
   width: fit-content;
 }
 
-// .table>:not(caption)>*>* {
-//   padding: .5rem .2rem;
-// }
+.table>:not(caption)>*>* {
+  padding: .5rem .2rem;
+}
 
 table thead th {
   position: sticky;
@@ -217,7 +213,7 @@ table thead th {
   }
 
   .custom-balanceTable {
-    height: clamp(100px, 100dvh - 284px, 900px);
+    height: clamp(100px, 100dvh - 323px, 900px);
   }
 
   .custome-dataTable {
@@ -225,8 +221,3 @@ table thead th {
   }
 
 }
-
-.current-value{
-  fill: rgb(var(--fx-white))!important;
-}
-

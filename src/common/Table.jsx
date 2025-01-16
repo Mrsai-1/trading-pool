@@ -13,18 +13,18 @@ const Table = ({ data, thead }) => {
 
   return (
     <>
-      <div className="table-responsive bots-table-area mb-2">
-        <table className="table table-bordered text-center mb-0  align-middle custom-border">
-          <thead className="thead">
+      <div className="table-responsive bots-table-area">
+        <table className="table table-bordered text-center mb-0">
+          <thead className="thead primary-bg">
             <tr>
               {thead.map((head, i) => (
                 <th key={i}>
-                  <p className="mb-0 fs-14">{head}</p>
+                  <p className="mb-0 primary-color fs-14">{head}</p>
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="tbody fx-white">
+          <tbody className="tbody">
             {limitedData?.length > 0 ? (
               limitedData?.map((data, index) => (
                 <tr key={index}>
@@ -106,7 +106,7 @@ const Table = ({ data, thead }) => {
 
       </div>
 
-      <div className="d-flex justify-content-between align-items-center">
+      <div className="d-flex justify-content-between align-items-center mt-3">
         <div
           onClick={() => {
             // Store data in localStorage

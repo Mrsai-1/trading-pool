@@ -218,9 +218,9 @@ const BinanceSpotBot = ({ dispatch, binanceSpot, getProfile }) => {
         </div>
       ) : (
         <>
-          <div className="bot-status d-flex flex-wrap justify-content-between gap-2 mb-2">
+          <div className="bot-status d-flex flex-wrap justify-content-between gap-2 pb-1">
             <div
-              className="custom-border d-flex flex-column align-items-center justify-content-between flex-fill p-1 cursor-pointer"
+              className="border d-flex flex-column align-items-center justify-content-between flex-fill p-1 cursor-pointer"
               data-bs-toggle="modal"
               data-bs-target="#editBinanceSpotModal"
             >
@@ -231,7 +231,7 @@ const BinanceSpotBot = ({ dispatch, binanceSpot, getProfile }) => {
                 capital assigned
               </p>
             </div>
-            <div className="custom-border d-flex flex-column align-items-center justify-content-between flex-fill p-1">
+            <div className="border d-flex flex-column align-items-center justify-content-between flex-fill p-1">
               <h6 className="mb-0 fw-bold fs-15">
                 {formatToExactDecimals(parseFloat(totalBalance || 0), 2)}
               </h6>
@@ -239,7 +239,7 @@ const BinanceSpotBot = ({ dispatch, binanceSpot, getProfile }) => {
                 current balance
               </p>
             </div>
-            <div className="custom-border d-flex flex-column align-items-center justify-content-between flex-fill p-1">
+            <div className="border d-flex flex-column align-items-center justify-content-between flex-fill p-1">
               <h6
                 className={`mb-0 status-percent fw-bold px-2 py-1 fs-13 ${capital_investment < 0 ? "bg-danger" : "bg-success"
                   }`}
@@ -256,7 +256,7 @@ const BinanceSpotBot = ({ dispatch, binanceSpot, getProfile }) => {
                 % change
               </p>
             </div>
-            <div className="custom-border d-flex justify-content-center align-items-center flex-fill p-1">
+            <div className="border d-flex justify-content-center align-items-center flex-fill p-1">
               {handleButtonClick()}
 
             </div>

@@ -11,22 +11,22 @@ const BitgetSpotTable = ({ data }) => {
 
   return (
     <>
-      <div className="table-responsive bots-table-area mb-2">
-        <table className="table table-bordered text-center mb-0 align-middle custom-border">
-          <thead className="thead">
+      <div className="table-responsive bots-table-area">
+        <table className="table table-bordered text-center mb-0">
+          <thead className="thead primary-bg">
             <tr>
               <th>
-                <p className="mb-0 fs-14">Symbol</p>
+                <p className="mb-0 primary-color fs-14">Symbol</p>
               </th>
               <th>
-                <p className="mb-0 fs-14">Avg Price</p>
+                <p className="mb-0 primary-color fs-14">Avg Price</p>
               </th>
               <th>
-                <p className="mb-0 fs-14">Size</p>
+                <p className="mb-0 primary-color fs-14">Size</p>
               </th>
             </tr>
           </thead>
-          <tbody className="tbody fx-white">
+          <tbody className="tbody">
             {limitedData?.length > 0 ? (
               limitedData?.map((data, index) => (
                 <tr key={index}>
@@ -122,7 +122,7 @@ const BitgetSpotTable = ({ data }) => {
           // Navigate to the route without query params
           navigate("/allDataTable");
         }}
-        className="text-center"
+        className="text-center mt-3"
       >
         <button className="py-1">View All</button>
       </div>

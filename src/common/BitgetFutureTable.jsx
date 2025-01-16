@@ -13,22 +13,22 @@ const BitgetFutureTable = ({ data }) => {
 
   return (
     <>
-      <div className="table-responsive bots-table-area mb-2">
-        <table className="table table-bordered text-center mb-0 align-middle custom-border">
-          <thead className="thead">
+      <div className="table-responsive bots-table-area">
+        <table className="table table-bordered text-center mb-0">
+          <thead className="thead primary-bg">
             <tr>
               <th>
-                <p className="mb-0 fs-14">Symbol</p>
+                <p className="mb-0 primary-color fs-14">Symbol</p>
               </th>
               <th>
-                <p className="mb-0 fs-14">Profit</p>
+                <p className="mb-0 primary-color fs-14">Profit</p>
               </th>
               <th>
-                <p className="mb-0 fs-14">PositionAmt</p>
+                <p className="mb-0 primary-color fs-14">PositionAmt</p>
               </th>
             </tr>
           </thead>
-          <tbody className="tbody fx-white">
+          <tbody className="tbody">
             {limitedData?.length > 0 ? (
               limitedData?.map((data, index) => (
                 <tr key={index}>
@@ -110,7 +110,7 @@ const BitgetFutureTable = ({ data }) => {
 
 
       </div>
-      <div className="d-flex justify-content-between align-items-center">
+      <div className="d-flex justify-content-between align-items-center mt-3">
         <div
           onClick={() => {
             // Define the data to store in localStorage
