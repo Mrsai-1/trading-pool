@@ -1,15 +1,47 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import useFetchKeys from "./CotextTest";
 import Buysellfuturemodal from "../components/models/BuysellFutureModal";
+import AutoProfitCloseModal from "../components/models/AutoProfitCloseModal";
 
 const Table = ({ data, thead }) => {
   const navigate = useNavigate();
+const [current_pair , setCurrent_pair] = useState(null);
+    const [fetchedPrice, setFetchedPrice] = useState(null);
 
-  const { getCoinicons, getFormattedDate } = useFetchKeys();
+  const { getCoinicons, formatToExactDecimals,getValuepp } = useFetchKeys();
 
   const limitedData = data?.length > 3 ? data?.slice(0, 5) : data;
 
+    const getTargetPrices = async () => {
+          try {
+              // Guard clause for empty sortedData
+              if (limitedData.length === 0) {
+                  return;
+              }
+  
+              const fetchedPrices = [];
+              for (let i = 0; i < limitedData.length; i++) {
+                  const { data } = await getValuepp(limitedData[i].symbol);
+                  fetchedPrices.push({
+                      pair: limitedData[i],
+                      price: parseFloat(data.price).toFixed(3),
+                      // targ: newour_target_price,
+                  });
+                  setFetchedPrice(fetchedPrices);
+                  // Wait for 1 second before the next API call
+                  await new Promise((resolve) => setTimeout(resolve, 1000));
+              }
+          } catch (error) {
+              console.log(error, "error");
+          }
+      };
+  
+      useEffect(() => {
+          if (data) {
+              getTargetPrices();
+          }
+      }, [data]);
 
   return (
     <>
@@ -44,7 +76,12 @@ const Table = ({ data, thead }) => {
                   </td>
                   <td>
                     <p className={`mb-0 fs-13 fw-semibold lh-2${data.unRealizedProfit > 0 ? " text-success" : " text-danger"}`}>
-                      {parseFloat(data.unRealizedProfit || 0)}
+                    {formatToExactDecimals(parseFloat(data.unRealizedProfit || 0),4)}
+                    </p>
+                  </td>
+                  <td>
+                    <p className={`mb-0 fs-13 fw-semibold lh-2`}>
+                    {formatToExactDecimals(parseFloat(fetchedPrice?.find(pair => pair.pair.symbol === data.symbol)?.price || "0"), 4)}
                     </p>
                   </td>
                   <td>
@@ -52,11 +89,19 @@ const Table = ({ data, thead }) => {
                       {parseFloat(data.positionAmt || 0)}
                     </p>
                   </td>
+                  <td>
+                    <button className="px-2 py-1" onClick={()=>setCurrent_pair(data.symbol)} 
+                     data-bs-toggle="modal"
+                     data-bs-target="#autoprofitclosemodal"
+                    >
+                  <i class="ri-file-edit-line"></i>
+                    </button>
+                  </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan={3}>
+                <td colSpan={5}>
                   <p className="text-center">No Data Found</p>
                 </td>
               </tr>
@@ -137,6 +182,8 @@ const Table = ({ data, thead }) => {
         </div>
       </div>
       <Buysellfuturemodal />
+      <AutoProfitCloseModal current_pair={current_pair} platform="BINANCE"/>
+    
     </>
   );
 };

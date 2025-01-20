@@ -203,7 +203,7 @@ const RenderFuturesTable = ({ sortProfit, sortAscending, loading, sortedData, bo
                                     </p>
                                 </td>
                                 <td className="d-none d-md-table-cell">
-                                    <p className="mb-0 fs-12 fw-semibold lh-2 d-none d-sm-block" >
+                                    <p className="mb-0 fs-12 fw-semibold lh-2 d-none d-sm-block " >
 
                                         {formatToExactDecimals(parseFloat(fetchedPrice?.find(pair => pair.pair.symbol === row.symbol)?.price || "0"), 4)}
                                         {/* { getTargetPrices()} */}

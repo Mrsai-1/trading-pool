@@ -127,7 +127,7 @@ const BinanceFutureBot = React.memo(({ dispatch, binanceFuture, getProfile }) =>
     if (modalInstance) modalInstance.hide();
   };
 
-  const theadData = ["Symbol", "Profit", "PositionAmt"];
+  const theadData = ["Symbol", "Profit","CurrentPrice", "PositionAmt","Action"];
 
   const handleChangeBotStatusBiFuture = (e) => {
     e.stopPropagation();
