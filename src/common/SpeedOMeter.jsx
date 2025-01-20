@@ -74,8 +74,8 @@ const SpeedOMeter = ({ title, balance, target }) => {
           },
         ]}
         needleColor="#000"
-        startColor="#1C526D"
-        endColor="#7CDBF9"
+        startColor="#405D72"
+        endColor="#758694"
         fluidWidth={false}
         height={180}
         width={250}

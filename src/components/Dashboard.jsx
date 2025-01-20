@@ -107,7 +107,7 @@ const Dashboard = () => {
           <div className="col-xl-6 col-lg-6 col-md-12 mb-3">
             <div className="card ">
               <div className="card-body ">
-                {/* <div className="the-bots d-flex gap-2 mb-2">
+                <div className="the-bots d-flex gap-2 mb-2">
                   <div
                     className={`binance-spot-bot flex-fill text-center p-2 ${activeSpotBot === "BINANCE" ? "active" : ""
                       }`}
@@ -126,8 +126,8 @@ const Dashboard = () => {
                       bitget SPOT bot
                     </p>
                   </div>
-                </div> */}
-                 <div className="d-flex justify-content-end align-items-center">
+                </div>
+                 {/* <div className="d-flex justify-content-end align-items-center">
                  <label htmlFor="filter" className="switch" aria-label="Toggle Filter">
         <input
           type="checkbox"
@@ -137,7 +137,7 @@ const Dashboard = () => {
         <span className={`${activeSpotBot === "BINANCE" ? "text-dark fw-semibold" : "fx-white fw-semibold"}`}>Binance Spot Bot</span>
         <span className={`${activeSpotBot === "BITGET" ? "text-dark fw-semibold" : "fx-white fw-semibold"}`}>Bitget Spot Bot</span>
       </label>
-      </div>
+      </div> */}
                 {/* <Suspense
                   fallback={
                     <div>
@@ -158,7 +158,7 @@ const Dashboard = () => {
           <div className="col-xl-6 col-lg-6 col-md-12 mb-3">
             <div className="card">
               <div className="card-body ">
-                {/* <div className="the-bots d-flex gap-2 mb-2">
+                <div className="the-bots d-flex gap-2 mb-2">
                   <div
                     className={`binance-spot-bot flex-fill text-center p-2 ${activeFutureBot === "BINANCE" ? "active" : ""
                       }`}
@@ -177,9 +177,9 @@ const Dashboard = () => {
                       bitget FUTURES bot
                     </p>
                   </div>
-                </div> */}
+                </div>
 
-<div className="d-flex justify-content-end align-items-center">
+{/* <div className="d-flex justify-content-end align-items-center">
                <label htmlFor="botFilter" className="switch" aria-label="Toggle Filter">
         <input
           type="checkbox"
@@ -189,7 +189,7 @@ const Dashboard = () => {
         <span className={`${activeFutureBot === "BINANCE" ? "text-dark fw-semibold" : "fx-white fw-semibold"}`}>Binance Futures Bot</span>
         <span className={`${activeFutureBot === "BITGET" ? "text-dark fw-semibold" : "fx-white fw-semibold"}`}>Bitget Futures Bot</span>
       </label>
-               </div>
+               </div> */}
 
                 {/* <Suspense
                   fallback={

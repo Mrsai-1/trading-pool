@@ -22,7 +22,7 @@ body {
 button {
   border: none;
   background-color: rgb(var(--primary-color));
-  // color: rgb(var(--fx-white));
+  color: rgb(var(--fx-white));
   font-size: 14px;
   padding: 10px 20px;
   font-weight: 600;
@@ -47,7 +47,7 @@ button {
 
 .primary-bg {
   background-color: rgb(var(--primary-color));
-  color: rgb(var(--fx-dark)) !important;
+  color: rgb(var(--fx-white)) !important;
 
   th {
     p {
@@ -230,7 +230,7 @@ button {
 
 .bg-success {
   background-color: #4CAF50 !important;
-  
+  color:rgb(var(--fx-white));
 }
 
 .text-success {
@@ -239,6 +239,8 @@ button {
 
 .bg-danger {
   background-color: #FF6F61 !important;
+  color:rgb(var(--fx-white));
+
 }
 
 .text-danger {

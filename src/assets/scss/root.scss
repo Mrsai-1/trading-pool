@@ -38,22 +38,24 @@ body {
     //--text-color: 240, 240, 240; // #F0F0F0
 
     // other color theme
-    --primary-color: 48, 207, 255; // #1C526D
-    --secondary-color: 124, 219, 249; // #7CDBF9
-  
-    --theme-primary: 255, 255, 255; // #FFFFFF
-    --theme-secondary: 247, 248, 250; // #F8F9FB
-    --text-color: 21, 21, 23; //#151517
+    --primary-color: 64, 93, 114;
+    --secondary-color: 124, 219, 249;
+    --theme-primary: 250 247 240;
+    --theme-secondary: 240 242 246;
+    --text-color: 21, 21, 23;
     --fx-white: 255, 255, 255;
     --fx-dark: 0, 0, 0;
-    --muted-text: 28, 82, 109; //e2e2e2
+    --muted-text: 117 134 148;
+    --disable-color: 187 177 177;
     --default-text-color: 0,0,0;
     --default-border-color: 237 232 232;
 
     --box-shadow-light: 0 2px 4px rgba(255, 255, 255, 0.1);
 --box-shadow-medium: 0 4px 8px rgba(0, 0, 0,0);
---box-shadow-primary: 0 2px 24px rgba(48, 207, 255, 0.9);
+--box-shadow-primary: 0 2px 24px rgba(var(--primary-color));
   }
 }
+
+
 
 
